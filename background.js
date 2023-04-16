@@ -10,10 +10,7 @@ chrome.runtime.onInstalled.addListener(async () => {
 
 chrome.tabs.onActivated.addListener(checkTab);
 
-eventList = ['onBeforeNavigate', 'onCreatedNavigationTarget',
-    'onCommitted', 'onCompleted', 'onDOMContentLoaded',
-    'onErrorOccurred', 'onReferenceFragmentUpdated', 'onTabReplaced',
-    'onHistoryStateUpdated'];
+eventList = ['onBeforeNavigate', 'onCommitted', 'onCompleted','onHistoryStateUpdated'];
 
 eventList.forEach(function(e) {
     chrome.webNavigation[e].addListener(async data => {
